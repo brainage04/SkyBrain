@@ -24,6 +24,7 @@ Replace "insert-api-key-here" with your personal Hypixel API key, which you can 
 
 5. Run "node .\scripts\downloadResources.js" to download data from all public branches of the Hypixel API.
 6. Open a new Command Prompt terminal and run "SET DEBUG=skybrain:* & npm start" to start the webserver.
+7. Open your default web browser and paste "http://localhost:3000/" into the address bar.
 
 # To-do List:
 1. Use 3D block models instead of block face textures.
