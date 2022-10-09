@@ -1,5 +1,8 @@
-# SkyBrain
+# Description
 A Node.js and Express-based webserver that allows browsing of processed Hypixel Skyblock API data.
+This project was heavily inspired by SkyCrypt and attempts to process Skyblock data where it does not, such as the Auction House and Bazaar.
+The goal of this project is to process all publicly available Hypixel Skyblock API branches, and even create pages where API data is not available (such as the Skyblock Events Calendar).
+If you wish to contact me, please do so at Brainage#6832 on Discord. If I am not available there, I will be available on the SkyBrain Discord Server: https://discord.gg/hAfkNtWFE5
 
 # Installation Instructions
 1. Download the .zip file for the source code and extract it.
@@ -25,6 +28,5 @@ Replace "insert-api-key-here" with your personal Hypixel API key, which you can 
 1. Use 3D block models instead of block face textures.
 	- Find a package that can render Minecraft blocks (minecraft-blocks-render, minecraft-render) - including player heads (these are used a lot in Skyblock for things like helmets, talismans, etc.). If the package can render player skins too, that is a plus.
 	- These packages will probably use the Three.js JavaScript library, so if an appropriate one can not be found, make your own code using that library.
-
 2. Change "index" to "bazaar" in routes and views folders and create a new index page showcasing all the features and pages on the website.
 3. Create separate files for head, nav and footer elements with the ability to export variables such as titles into them.
