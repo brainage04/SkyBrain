@@ -1,0 +1,115 @@
+:root {
+	--background-color-1: rgb(16, 16, 16);
+	--background-color-2: rgb(32, 32, 32);
+	--background-color-3: rgb(48, 48, 48);
+	--background-color-4: rgb(64, 64, 64);
+	--background-color-5: rgb(80, 80, 80);
+	--text-color: white;
+	--default-spacing: 1rem;
+	--default-transition: 250ms;
+	--outer-item-size: 72px;
+	--inner-item-size: 64px;
+	--default-tooltip-border: calc(var(--inner-item-size) / 32) solid var(--text-color);
+}
+
+* {
+	padding: 0rem;
+	margin: 0rem;
+	color: var(--text-color);
+	font-family: monospace;	
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	background-color: var(--background-color-1);
+}
+
+nav {
+	display: flex;
+	flex-direction: row;
+	background-color: var(--background-color-2);
+}
+
+main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: var(--background-color-2);
+}
+
+nav a, footer a {
+	padding: var(--default-spacing);
+	text-decoration: none;
+}
+
+nav a:hover, footer a:hover {
+	background-color: var(--background-color-3);
+}
+
+#bazaarContents {
+	display: grid;
+	grid-template-rows: repeat(6, var(--outer-item-size));
+	grid-template-columns: repeat(9, var(--outer-item-size));
+	border: var(--default-tooltip-border);
+}
+
+.bazaarItem {
+	background-size: 68px;
+	image-rendering: pixelated;
+	border: var(--default-tooltip-border);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bazaarItem .itemTooltip {
+	visibility: hidden;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--background-color-2);
+	border: var(--default-tooltip-border);
+	padding: var(--default-spacing);
+	margin-left: calc(var(--inner-item-size) * 1.25);
+	margin-top: calc(var(--inner-item-size) * 0.75);
+}
+
+.bazaarItem:hover .itemTooltip {
+	visibility: visible;
+}
+
+.bazaarItem:hover, .bazaarItem:focus {
+	background-color: rgba(255, 255, 255, 0.5);
+	outline: none;
+}
+
+.bazaarItemImage {
+	background-image: url("/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png");
+	width: var(--inner-item-size);
+	height: var(--inner-item-size);
+	border-top: calc(var(--inner-item-size) / 16) solid var(--background-color-5);
+	border-left: calc(var(--inner-item-size) / 16) solid var(--background-color-5);
+	background-size: var(--inner-item-size);
+	image-rendering: pixelated;
+	z-index: -1;
+}
+
+.itemImage {
+	background-image: url("/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/glass_white.png");
+	width: var(--inner-item-size);
+	height: var(--inner-item-size);
+	border-top: calc(var(--inner-item-size) / 16) solid var(--background-color-5);
+	border-left: calc(var(--inner-item-size) / 16) solid var(--background-color-5);
+	background-size: var(--inner-item-size);
+	image-rendering: pixelated;
+	z-index: -1;
+}
