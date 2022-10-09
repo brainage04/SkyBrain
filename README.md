@@ -21,6 +21,7 @@ If you wish to contact me, please do so at Brainage#6832 on Discord. If I am not
 }
 </pre>
 Replace "insert-api-key-here" with your personal Hypixel API key, which you can obtain by logging onto Hypixel and running "/api new".
+
 5. Run "node .\scripts\downloadResources.js" to download data from all public branches of the Hypixel API.
 6. Open a new Command Prompt terminal and run "SET DEBUG=skybrain:* & npm start" to start the webserver.
 
