@@ -35,7 +35,8 @@ nav {
 main {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 
 footer {
@@ -54,7 +55,8 @@ nav a:hover, footer a:hover {
 	background-color: var(--background-color-3);
 }
 
-#bazaarContents {
+#bazaarContents, #bazaarFavourites {
+	margin: var(--default-spacing);
 	display: grid;
 	grid-template-rows: repeat(6, var(--outer-item-size));
 	grid-template-columns: repeat(9, var(--outer-item-size));

@@ -1,0 +1,185 @@
+<%
+	// define non-dynamic constants
+	let itemImageArray = [
+		[0, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/gold_hoe.png", "Farming", "itemImage"],
+		[9, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/diamond_pickaxe.png", "Mining", "itemImage"],
+		[18, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/iron_sword.png", "Combat", "itemImage"],
+		[27, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/fishing_rod_uncast.png", "Fishing and Woods", "itemImage"],
+		[36, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/enchanting_table_top.png", "Oddities", "itemImage"],
+		[45, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/spawn_egg.png", "Other", "itemImage"],
+		[47, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/sign.png", "Search", "itemImage"],
+		[52, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/iron_ore.png", "View Mode", "itemImage"],
+		[44, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/arrow.png", "Page Down", "itemImage"],
+		[17, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/items/arrow.png", "Page Up", "itemImage"]
+	];
+
+	let bazaarItemImageArray = [
+		[11, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[12, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[13, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[14, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[15, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[16, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[20, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[21, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[22, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[23, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[24, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[25, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[29, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[30, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[31, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[32, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[33, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[34, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[38, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[39, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[40, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[41, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[42, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"],
+		[43, "/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png", "Loading...", "bazaarItemImage"]
+	];
+
+	let backgroundImageArray = itemImageArray.concat(bazaarItemImageArray);
+
+	// define dynamic constants (skyblock data)
+	const products = bazaarData.products;
+	const items = itemData.items;
+	/*const farmingItems = [
+		"SEEDS",
+		"ENCHANTED_SEEDS",
+		"WHEAT",
+		"HAY_BALE",
+		"ENCHANTED_HAY_BLOCK",
+		"TIGHTLY_TIED_HAY_BALE",
+		"ENCHANTED_BREAD",
+		"CARROT_ITEM",
+		"ENCHANTED_CARROT",
+		"ENCHANTED_GOLDEN_CARROT",
+		"CARROT_STICK",
+		"POTATO_ITEM",
+		"ENCHANTED_POTATO",
+		"ENCHANTED_BAKED_POTATO",
+		"PUMPKIN",
+		"ENCHANTED_PUMPKIN",
+		"POLISHED_PUMPKIN",
+		"MELON",
+		"MELON_BLOCK",
+		"ENCHANTED_MELON",
+		"ENCHANTED_MELON_BLOCK",
+		"ENCHANTED_GLISTERING_MELON",
+		"RED_MUSHROOM",
+		"HUGE_MUSHROOM_2",
+		"ENCHANTED_RED_MUSHROOM",
+		"ENCHANTED_HUGE_MUSHROOM_2",
+		"BROWN_MUSHROOM",
+		"HUGE_MUSHROOM_1",
+		"ENCHANTED_BROWN_MUSHROOM",
+		"ENCHANTED_HUGE_MUSHROOM_1",
+		"INK_SACK:3",
+		"ENCHANTED_COCOA",
+		"ENCHANTED_COOKIE",
+		"CACTUS",
+		"INK_SACK:2",
+		"ENCHANTED_CACTUS_GREEN",
+		"SUGAR_CANE",
+		"ENCHANTED_SUGAR",
+		"ENCHANTED_SUGAR_CANE",
+		"ENCHANTED_PAPER",
+		"RAW_BEEF",
+		"ENCHANTED_RAW_BEEF",
+		"LEATHER",
+		"ENCHANTED_LEATHER",
+		"PORK",
+		"ENCHANTED_PORK",
+		"ENCHANTED_GRILLED_PORK",
+		"RAW_CHICKEN",
+		"ENCHANTED_RAW_CHICKEN",
+		"FEATHER",
+		"ENCHANTED_FEATHER",
+		"ENCHANTED_EGG",
+		"SUPER_EGG",
+		"OMEGA_EGG",
+		"ENCHANTED_CAKE",
+		"MUTTON",
+		"ENCHANTED_MUTTON",
+		"ENCHANTED_COOKED_MUTTON",
+		"RABBIT",
+		"ENCHANTED_RABBIT",
+		"RABBIT_HIDE",
+		"ENCHANTED_RABBIT_HIDE",
+		"RABBIT_FOOT",
+		"ENCHANTED_RABBIT_FOOT",
+		"NETHER_STALK",
+		"ENCHANTED_NETHER_STALK",
+		"MUTANT_NETHER_STALK",
+		"MYCEL",
+		"ENCHANTED_MYCELIUM",
+		"ENCHANTED_MYCELIUM_CUBE",
+	];
+	const miningItems = [
+		"COBBLESTONE",
+		"ENCHANTED_COBBLESTONE",
+	];
+
+	// initialize category objects
+	let farmingProducts, miningProducts, combatProducts, woodsAndFishesProducts, odditiesProducts, otherProducts = {};
+
+	for (let index in products) {
+		let bazaarProduct = products[index];
+
+		for (let subindex in farmingItems) {
+			let farmingItem = farmingItems[subindex];
+
+			if (bazaarProduct.product_id == farmingItem) {
+				farmingProducts += {
+					id: bazaarProduct.product_id,
+				};
+			}
+		}
+	}*/
+%>
+<!DOCTYPE html>
+<html lang="en">
+	<%-
+		include('partials/head.ejs');
+	%>
+	<body>
+		<%-
+			include('partials/nav.ejs');
+		%>
+		<main>
+			<div id="bazaarContents">
+				<% for (let i = 0; i < 54; i++) { // 54 slots in a double chest (size of bazaar GUI)
+					let foundArrayEntry = false;
+
+					for (let j = 0; j < backgroundImageArray.length; j++) { // note: using the shorthand "for (let index in array)" shorthand will print an error to browser console, as the NodeList contains the length of the array as the last item (for some reason?)
+						if (i == backgroundImageArray[j][0]) {
+								%>
+								<div class="bazaarItem" tabindex="<%- j + 1 %>">
+									<div class="<%- backgroundImageArray[j][3] %>" style="background-image: url(<%- backgroundImageArray[j][1] %>);"></div>
+									<div class="itemTooltip"><%- backgroundImageArray[j][2] %></div>
+								</div>
+								<%
+								foundArrayEntry = true;
+							}
+					}
+
+					if (!foundArrayEntry) {
+						%>
+						<div class="bazaarItem">
+							<div class="itemImage"></div>
+						</div>
+						<%
+					}
+				} %>
+			</div>
+			<div id="bazaarFavourites">
+				
+			</div>
+		</main>
+		<%-
+			include('partials/footer.ejs');
+		%>
+	</body>
+</html>
