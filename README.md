@@ -3,7 +3,6 @@ A Node.js and Express-based webserver that allows browsing of processed Hypixel 
 This project was heavily inspired by SkyCrypt and attempts to process Skyblock data where it does not, such as the Auction House and Bazaar.
 The goal of this project is to process all publicly available Hypixel Skyblock API branches, and even create pages where API data is not available (such as the Skyblock Events Calendar).
 If you wish to contact me, please do so at Brainage#6832 on Discord. If I am not available there, I will be available on the SkyBrain Discord Server: https://discord.gg/hAfkNtWFE5
-test
 
 # Installation Instructions
 1. Download the .zip file for the source code and extract it.
