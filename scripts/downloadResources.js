@@ -70,4 +70,6 @@ async function downloadAllResources() {
 	}
 }
 
+// downloadAllResources();
+
 module.exports = { downloadResource, downloadAllResources };
