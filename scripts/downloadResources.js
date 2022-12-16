@@ -1,11 +1,14 @@
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
-const { outputJSON } = require('fs-extra');
+const fetch = (...args) => import("node-fetch").then(({default: fetch}) => fetch(...args));
+const { outputJSON } = require("fs-extra");
 const config = require("../config.json");
+const mysql = require("mysql");
 
 const hypixelApiUrl = config.hypixelApiUrl;
 const hypixelApiKey = config.hypixelApiKey;
 const sampleUUID = config.sampleUUID;
 const sampleName = config.sampleName;
+const sqlUsername = config.sqlUsername;
+const sqlPassword = config.sqlPassword;
 
 const linkAndFileArray = [
 	[`key?key=${hypixelApiKey}`, "./data/key.json"],
@@ -71,5 +74,19 @@ async function downloadAllResources() {
 }
 
 // downloadAllResources();
+
+/*const itemData = downloadResource("resources/skyblock/items", "./data/resources/skyblock/items.json");
+const bazaarData = downloadResource("skyblock/bazaar", "./data/skyblock/bazaar.json");
+
+const con = mysql.createConnection({
+	host: "localhost",
+	user: sqlUsername,
+	password: sqlPassword
+});
+
+con.connect(function(err) {
+	if (err) throw err;
+	console.log("Connected!");
+});*/
 
 module.exports = { downloadResource, downloadAllResources };

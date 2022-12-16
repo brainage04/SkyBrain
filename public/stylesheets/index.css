@@ -55,6 +55,13 @@ nav a:hover, footer a:hover {
 	background-color: var(--background-color-3);
 }
 
+#bazaarContentsContainer, #bazaarFavouritesContainer {
+	margin: var(--default-spacing);
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
 #bazaarContents, #bazaarFavourites {
 	margin: var(--default-spacing);
 	display: grid;
@@ -106,7 +113,7 @@ nav a:hover, footer a:hover {
 }
 
 .itemImage {
-	background-image: url("/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/glass_white.png");
+	background-image: url("/images/resourcepacks/minecraft_1_8_9/assets/minecraft/textures/blocks/bedrock.png");
 	width: var(--inner-item-size);
 	height: var(--inner-item-size);
 	border-top: calc(var(--inner-item-size) / 16) solid var(--background-color-5);
